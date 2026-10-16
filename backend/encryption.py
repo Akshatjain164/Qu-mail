@@ -50,7 +50,10 @@ class EncryptedMessage:
 class QuMailEncryptionError(Exception):
     pass
 class QuMailMultiLevelEncryption:
-    def __init__(self, api_base_url: str = "http://127.0.0.1:5000"):
+    def __init__(self, api_base_url: str = None):
+        if not api_base_url:
+            port = os.environ.get('PORT', 5000)
+            api_base_url = f"http://127.0.0.1:{port}"
         self.api_base_url = api_base_url
         self.backend = default_backend()
         try:
@@ -341,6 +344,8 @@ class QuMailMultiLevelEncryption:
             )
         else:
             hybrid_key_data = self._derive_hybrid_key(f"level2_{message_id}")
+        if not hybrid_key_data:
+            hybrid_key_data = self._derive_hybrid_key_local(f"level2_{message_id}")
         if not hybrid_key_data:
             raise QuMailEncryptionError("Failed to derive hybrid key for Level 2 encryption")
         hybrid_key = base64.b64decode(hybrid_key_data['derived_key_b64'])
@@ -665,7 +670,7 @@ class QuMailMultiLevelEncryption:
         if not self.requests:
             return self._get_simulated_qkd_key()
         try:
-            response = self.requests.get(f"{self.api_base_url}/api/qkd/key", timeout=10)
+            response = self.requests.get(f"{self.api_base_url}/api/qkd/key", timeout=1)
             if response.status_code == 200:
                 return response.json()
             else:
@@ -678,7 +683,7 @@ class QuMailMultiLevelEncryption:
         if not self.requests:
             return self._get_simulated_qkd_key()
         try:
-            response = self.requests.get(f"{self.api_base_url}/api/qkd/key/{key_id}", timeout=10)
+            response = self.requests.get(f"{self.api_base_url}/api/qkd/key/{key_id}", timeout=1)
             if response.status_code == 200:
                 return response.json()
             else:
@@ -706,7 +711,7 @@ class QuMailMultiLevelEncryption:
         if not self.requests:
             return False
         try:
-            response = self.requests.post(f"{self.api_base_url}/api/qkd/consume/{key_id}", timeout=10)
+            response = self.requests.post(f"{self.api_base_url}/api/qkd/consume/{key_id}", timeout=1)
             return response.status_code == 200
         except Exception as e:
             logger.warning(f"Failed to consume QKD key: {e}")
@@ -736,7 +741,7 @@ class QuMailMultiLevelEncryption:
             }
             if qkd_key:
                 hybrid_data["qkd_key_id"] = qkd_key['key_id']
-            response = self.requests.post(f"{self.api_base_url}/api/hybrid/derive", json=hybrid_data, timeout=15)
+            response = self.requests.post(f"{self.api_base_url}/api/hybrid/derive", json=hybrid_data, timeout=2)
             if response.status_code == 201:
                 return response.json()
         except Exception as e:
@@ -746,7 +751,7 @@ class QuMailMultiLevelEncryption:
         if not self.requests:
             return None
         try:
-            response = self.requests.get(f"{self.api_base_url}/api/hybrid/key/{key_id}", timeout=10)
+            response = self.requests.get(f"{self.api_base_url}/api/hybrid/key/{key_id}", timeout=1)
             if response.status_code == 200:
                 return response.json()
         except Exception as e:
@@ -756,7 +761,7 @@ class QuMailMultiLevelEncryption:
         if not self.requests:
             return self._get_simulated_ecdh_keypair()
         try:
-            response = self.requests.post(f"{self.api_base_url}/api/ecdh/keypair", json={"key_id": key_id}, timeout=10)
+            response = self.requests.post(f"{self.api_base_url}/api/ecdh/keypair", json={"key_id": key_id}, timeout=1)
             if response.status_code == 201:
                 return response.json()
             else:
@@ -774,7 +779,7 @@ class QuMailMultiLevelEncryption:
                 "remote_public_key": remote_public_key,
                 "shared_secret_id": shared_secret_id
             }
-            response = self.requests.post(f"{self.api_base_url}/api/ecdh/exchange", json=data, timeout=10)
+            response = self.requests.post(f"{self.api_base_url}/api/ecdh/exchange", json=data, timeout=1)
             if response.status_code == 201:
                 return response.json()
         except Exception as e:
@@ -784,7 +789,7 @@ class QuMailMultiLevelEncryption:
         if not self.requests:
             return self._get_simulated_mlkem_keypair()
         try:
-            response = self.requests.post(f"{self.api_base_url}/api/mlkem/keypair", json={"key_id": key_id}, timeout=10)
+            response = self.requests.post(f"{self.api_base_url}/api/mlkem/keypair", json={"key_id": key_id}, timeout=1)
             if response.status_code == 201:
                 return response.json()
             else:
@@ -801,7 +806,7 @@ class QuMailMultiLevelEncryption:
                 "remote_public_key": public_key,
                 "secret_id": secret_id
             }
-            response = self.requests.post(f"{self.api_base_url}/api/mlkem/encapsulate", json=data, timeout=10)
+            response = self.requests.post(f"{self.api_base_url}/api/mlkem/encapsulate", json=data, timeout=1)
             if response.status_code == 201:
                 return response.json()
         except Exception as e:
@@ -811,7 +816,7 @@ class QuMailMultiLevelEncryption:
         if not self.requests:
             return None
         try:
-            response = self.requests.get(f"{self.api_base_url}/api/mlkem/encapsulated/{secret_id}", timeout=10)
+            response = self.requests.get(f"{self.api_base_url}/api/mlkem/encapsulated/{secret_id}", timeout=1)
             if response.status_code != 200:
                 logger.warning(f"Encapsulated secret not found: {secret_id}")
                 return None
@@ -820,7 +825,7 @@ class QuMailMultiLevelEncryption:
                 "local_key_id": keypair_id,
                 "ciphertext": encaps_data['ciphertext']
             }
-            response = self.requests.post(f"{self.api_base_url}/api/mlkem/decapsulate", json=data, timeout=10)
+            response = self.requests.post(f"{self.api_base_url}/api/mlkem/decapsulate", json=data, timeout=1)
             if response.status_code == 200:
                 return response.json()
         except Exception as e:

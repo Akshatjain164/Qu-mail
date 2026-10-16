@@ -19,6 +19,7 @@ Features:
 
 import smtplib
 import imaplib
+import socket
 import email
 import ssl
 import os
@@ -118,27 +119,31 @@ class QuMailEmailSender:
         self.smtp_server = None
         
     def connect_smtp(self) -> bool:
-        try:
-            logger.info(f"🔄 Connecting to Gmail SMTP: {self.credentials.smtp_server}:{self.credentials.smtp_port}")
-            
-            self.smtp_server = smtplib.SMTP(self.credentials.smtp_server, self.credentials.smtp_port, timeout=120)
-            self.smtp_server.starttls()
-            
-            self.smtp_server.login(self.credentials.email, self.credentials.password)
-            
-            logger.info("✅ Gmail SMTP connection established")
-            return True
-            
-        except smtplib.SMTPAuthenticationError as e:
-            logger.error(f"❌ SMTP Authentication failed: {e}")
-            logger.error("💡 Tip: Use Gmail App Password, not regular password")
-            return False
-        except smtplib.SMTPException as e:
-            logger.error(f"❌ SMTP connection error: {e}")
-            return False
-        except Exception as e:
-            logger.error(f"❌ Unexpected SMTP error: {e}")
-            return False
+        # Try port 587 (STARTTLS) and port 465 (SSL)
+        ports_to_try = [(587, False), (465, True)]
+        for port, use_ssl in ports_to_try:
+            try:
+                logger.info(f"🔄 Connecting to {self.credentials.smtp_server}:{port} (SSL={use_ssl})...")
+                if use_ssl:
+                    self.smtp_server = smtplib.SMTP_SSL(self.credentials.smtp_server, port, timeout=8)
+                else:
+                    self.smtp_server = smtplib.SMTP(self.credentials.smtp_server, port, timeout=8)
+                    self.smtp_server.starttls()
+                
+                self.smtp_server.login(self.credentials.email, self.credentials.password)
+                logger.info(f"✅ SMTP connection established on port {port}")
+                return True
+            except smtplib.SMTPAuthenticationError as e:
+                logger.error(f"❌ SMTP Authentication failed: {e}")
+                self.last_error = "Gmail authentication failed: Please verify your 16-character App Password."
+                return False
+            except (socket.timeout, TimeoutError) as e:
+                logger.warning(f"⚠️ Port {port} timed out: {e}")
+                self.last_error = f"Connection to smtp.gmail.com:{port} timed out (blocked by host)."
+            except Exception as e:
+                logger.warning(f"⚠️ Port {port} failed: {e}")
+                self.last_error = f"SMTP connection error on port {port}: {e}"
+        return False
     
     def disconnect_smtp(self):
         if self.smtp_server:
@@ -280,7 +285,7 @@ Smart India Hackathon 2025
                 if not self.connect_smtp():
                     return EmailSendResult(
                         success=False,
-                        error="Failed to connect to SMTP server"
+                        error=getattr(self, 'last_error', "Failed to connect to SMTP server")
                     )
             else:
                 try:
