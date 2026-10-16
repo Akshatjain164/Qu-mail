@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2400" height="1800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background and Gradients -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A0A1A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1A1A3A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2A1A4A;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Component Gradients -->
+    <linearGradient id="frontendGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#1E40AF;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <linearGradient id="backendGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#047857;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <linearGradient id="quantumGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#5B21B6;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <linearGradient id="securityGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <linearGradient id="externalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF4444;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#DC2626;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <!-- Arrow Markers -->
+    <marker id="blueArrow" markerWidth="12" markerHeight="8" refX="11" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#3B82F6" />
+    </marker>
+    <marker id="greenArrow" markerWidth="12" markerHeight="8" refX="11" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#10B981" />
+    </marker>
+    <marker id="purpleArrow" markerWidth="12" markerHeight="8" refX="11" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#8B5CF6" />
+    </marker>
+    <marker id="yellowArrow" markerWidth="12" markerHeight="8" refX="11" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#F59E0B" />
+    </marker>
+    <marker id="redArrow" markerWidth="12" markerHeight="8" refX="11" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#EF4444" />
+    </marker>
+    
+    <!-- Glowing effects -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  
+  <!-- Title -->
+  <text x="1200" y="40" font-family="Arial, sans-serif" font-size="36" font-weight="bold" text-anchor="middle" fill="#FFFFFF" filter="url(#glow)">
+    🛡️ QuMail: Complete System Flow &amp; Architecture
+  </text>
+  <text x="1200" y="75" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#A855F7">
+    Byte-Bandits Hackathon 2026 | Quantum-Secure Email Client | 192-bit Hybrid Security | Real-time Data Flow
+  </text>
+  
+  <!-- USER LAYER -->
+  <g>
+    <rect x="50" y="120" width="300" height="100" rx="15" fill="rgba(168,85,247,0.3)" stroke="#A855F7" stroke-width="3"/>
+    <text x="200" y="145" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#FFFFFF">👤 USER LAYER</text>
+    <rect x="70" y="160" width="80" height="40" rx="8" fill="rgba(255,255,255,0.2)" stroke="#A855F7"/>
+    <text x="110" y="185" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#FFFFFF">Login/Auth</text>
+    <rect x="160" y="160" width="80" height="40" rx="8" fill="rgba(255,255,255,0.2)" stroke="#A855F7"/>
+    <text x="200" y="185" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#FFFFFF">Compose</text>
+    <rect x="250" y="160" width="80" height="40" rx="8" fill="rgba(255,255,255,0.2)" stroke="#A855F7"/>
+    <text x="290" y="185" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#FFFFFF">Read Email</text>
+  </g>
+  
+  <!-- FRONTEND LAYER -->
+  <g>
+    <rect x="50" y="280" width="800" height="400" rx="15" fill="url(#frontendGrad)" stroke="#3B82F6" stroke-width="3"/>
+    <text x="450" y="310" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#FFFFFF">
+      🎨 FRONTEND - Electron Desktop Application
+    </text>
+    
+    <!-- UI Layer -->
+    <rect x="80" y="340" width="740" height="80" rx="10" fill="rgba(255,255,255,0.1)" stroke="#60A5FA" stroke-width="2"/>
+    <text x="450" y="365" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">UI COMPONENTS LAYER</text>
+    
+    <rect x="100" y="375" width="100" height="35" rx="5" fill="rgba(255,255,255,0.2)" stroke="#60A5FA"/>
+    <text x="150" y="397" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">Glassmorphism UI</text>
+    
+    <rect x="220" y="375" width="100" height="35" rx="5" fill="rgba(255,255,255,0.2)" stroke="#60A5FA"/>
+    <text x="270" y="397" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">Email List View</text>
+    
+    <rect x="340" y="375" width="100" height="35" rx="5" fill="rgba(255,255,255,0.2)" stroke="#60A5FA"/>
+    <text x="390" y="397" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">Email Reader</text>
+    
+    <rect x="460" y="375" width="100" height="35" rx="5" fill="rgba(255,255,255,0.2)" stroke="#60A5FA"/>
+    <text x="510" y="397" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">Compose Form</text>
+    
+    <rect x="580" y="375" width="100" height="35" rx="5" fill="rgba(255,255,255,0.2)" stroke="#60A5FA"/>
+    <text x="630" y="397" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">Profile Manager</text>
+    
+    <rect x="700" y="375" width="100" height="35" rx="5" fill="rgba(255,255,255,0.2)" stroke="#60A5FA"/>
+    <text x="750" y="397" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">Modal System</text>
+    
+    <!-- Manager Layer -->
+    <rect x="80" y="440" width="360" height="120" rx="10" fill="rgba(59,130,246,0.3)" stroke="#3B82F6" stroke-width="2"/>
+    <text x="260" y="465" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">MANAGER LAYER</text>
+    
+    <rect x="100" y="480" width="100" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#3B82F6"/>
+    <text x="150" y="500" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Email Manager</text>
+    <text x="150" y="515" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• IMAP/SMTP</text>
+    <text x="150" y="527" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Folder Sync</text>
+    
+    <rect x="220" y="480" width="100" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#3B82F6"/>
+    <text x="270" y="500" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Compose Mgr</text>
+    <text x="270" y="515" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Form Validation</text>
+    <text x="270" y="527" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Send Control</text>
+    
+    <rect x="340" y="480" width="100" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#3B82F6"/>
+    <text x="390" y="500" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Profile Mgr</text>
+    <text x="390" y="515" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Auth Control</text>
+    <text x="390" y="527" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Session Mgmt</text>
+    
+    <!-- Animation &amp; Integration Layer -->
+    <rect x="460" y="440" width="360" height="120" rx="10" fill="rgba(139,92,246,0.3)" stroke="#8B5CF6" stroke-width="2"/>
+    <text x="640" y="465" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">INTEGRATION LAYER</text>
+    
+    <rect x="480" y="480" width="100" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#8B5CF6"/>
+    <text x="530" y="500" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">3D Animation</text>
+    <text x="530" y="515" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Three.js</text>
+    <text x="530" y="527" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Key Visual</text>
+    
+    <rect x="600" y="480" width="100" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#8B5CF6"/>
+    <text x="650" y="500" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Email API</text>
+    <text x="650" y="515" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Backend Call</text>
+    <text x="650" y="527" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Real-time</text>
+    
+    <rect x="720" y="480" width="100" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#8B5CF6"/>
+    <text x="770" y="500" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Crypto API</text>
+    <text x="770" y="515" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Frontend Enc</text>
+    <text x="770" y="527" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Key Mgmt</text>
+    
+    <!-- Testing Layer -->
+    <rect x="80" y="580" width="740" height="80" rx="10" fill="rgba(34,197,94,0.3)" stroke="#22C55E" stroke-width="2"/>
+    <text x="450" y="605" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">TESTING &amp; DEVELOPMENT LAYER</text>
+    
+    <rect x="150" y="620" width="120" height="30" rx="5" fill="rgba(255,255,255,0.2)" stroke="#22C55E"/>
+    <text x="210" y="640" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">GUI Test Suite</text>
+    
+    <rect x="290" y="620" width="120" height="30" rx="5" fill="rgba(255,255,255,0.2)" stroke="#22C55E"/>
+    <text x="350" y="640" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">Live Integration</text>
+    
+    <rect x="430" y="620" width="120" height="30" rx="5" fill="rgba(255,255,255,0.2)" stroke="#22C55E"/>
+    <text x="490" y="640" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">Mock Encryption</text>
+    
+    <rect x="570" y="620" width="120" height="30" rx="5" fill="rgba(255,255,255,0.2)" stroke="#22C55E"/>
+    <text x="630" y="640" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">Voice Commands</text>
+  </g>
+  
+  <!-- BACKEND LAYER -->
+  <g>
+    <rect x="950" y="280" width="800" height="400" rx="15" fill="url(#backendGrad)" stroke="#10B981" stroke-width="3"/>
+    <text x="1350" y="310" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#FFFFFF">
+      ⚙️ BACKEND - Flask RESTful API Server
+    </text>
+    
+    <!-- API Layer -->
+    <rect x="980" y="340" width="740" height="80" rx="10" fill="rgba(255,255,255,0.1)" stroke="#34D399" stroke-width="2"/>
+    <text x="1350" y="365" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">API ENDPOINTS LAYER</text>
+    
+    <rect x="1000" y="375" width="90" height="35" rx="5" fill="rgba(255,255,255,0.2)" stroke="#34D399"/>
+    <text x="1045" y="397" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#FFFFFF">/api/email/send</text>
+    
+    <rect x="1110" y="375" width="90" height="35" rx="5" fill="rgba(255,255,255,0.2)" stroke="#34D399"/>
+    <text x="1155" y="397" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#FFFFFF">/api/email/inbox</text>
+    
+    <rect x="1220" y="375" width="90" height="35" rx="5" fill="rgba(255,255,255,0.2)" stroke="#34D399"/>
+    <text x="1265" y="397" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#FFFFFF">/api/qkd/keys</text>
+    
+    <rect x="1330" y="375" width="90" height="35" rx="5" fill="rgba(255,255,255,0.2)" stroke="#34D399"/>
+    <text x="1375" y="397" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#FFFFFF">/api/encrypt</text>
+    
+    <rect x="1440" y="375" width="90" height="35" rx="5" fill="rgba(255,255,255,0.2)" stroke="#34D399"/>
+    <text x="1485" y="397" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#FFFFFF">/api/folders</text>
+    
+    <rect x="1550" y="375" width="90" height="35" rx="5" fill="rgba(255,255,255,0.2)" stroke="#34D399"/>
+    <text x="1595" y="397" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#FFFFFF">/api/decrypt</text>
+    
+    <rect x="1660" y="375" width="90" height="35" rx="5" fill="rgba(255,255,255,0.2)" stroke="#34D399"/>
+    <text x="1705" y="397" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#FFFFFF">/api/status</text>
+    
+    <!-- Core Services Layer -->
+    <rect x="980" y="440" width="360" height="120" rx="10" fill="rgba(16,185,129,0.3)" stroke="#10B981" stroke-width="2"/>
+    <text x="1160" y="465" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">CORE SERVICES</text>
+    
+    <rect x="1000" y="480" width="100" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#10B981"/>
+    <text x="1050" y="500" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Email Service</text>
+    <text x="1050" y="515" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• SMTP/IMAP</text>
+    <text x="1050" y="527" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Multi-provider</text>
+    
+    <rect x="1120" y="480" width="100" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#10B981"/>
+    <text x="1170" y="500" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Auth Service</text>
+    <text x="1170" y="515" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• App Passwords</text>
+    <text x="1170" y="527" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• JWT Tokens</text>
+    
+    <rect x="1240" y="480" width="100" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#10B981"/>
+    <text x="1290" y="500" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Config Service</text>
+    <text x="1290" y="515" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Firebase</text>
+    <text x="1290" y="527" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Certificates</text>
+    
+    <!-- Encryption Engine -->
+    <rect x="1360" y="440" width="360" height="120" rx="10" fill="rgba(139,92,246,0.3)" stroke="#8B5CF6" stroke-width="2"/>
+    <text x="1540" y="465" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">ENCRYPTION ENGINE</text>
+    
+    <rect x="1380" y="480" width="100" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#8B5CF6"/>
+    <text x="1430" y="500" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Multi-Level Enc</text>
+    <text x="1430" y="515" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• 4 Levels</text>
+    <text x="1430" y="527" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Dynamic</text>
+    
+    <rect x="1500" y="480" width="100" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#8B5CF6"/>
+    <text x="1550" y="500" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Hybrid KDF</text>
+    <text x="1550" y="515" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• HKDF-SHA256</text>
+    <text x="1550" y="527" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Triple Keys</text>
+    
+    <rect x="1620" y="480" width="100" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#8B5CF6"/>
+    <text x="1670" y="500" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">MIME Handler</text>
+    <text x="1670" y="515" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Attachments</text>
+    <text x="1670" y="527" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Structure</text>
+    
+    <!-- Crypto Layer -->
+    <rect x="980" y="580" width="740" height="80" rx="10" fill="rgba(168,85,247,0.3)" stroke="#A855F7" stroke-width="2"/>
+    <text x="1350" y="605" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">CRYPTOGRAPHIC MODULES</text>
+    
+    <rect x="1020" y="620" width="110" height="30" rx="5" fill="rgba(255,255,255,0.2)" stroke="#A855F7"/>
+    <text x="1075" y="640" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">QKD Simulator</text>
+    
+    <rect x="1150" y="620" width="110" height="30" rx="5" fill="rgba(255,255,255,0.2)" stroke="#A855F7"/>
+    <text x="1205" y="640" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">ECDH/X25519</text>
+    
+    <rect x="1280" y="620" width="110" height="30" rx="5" fill="rgba(255,255,255,0.2)" stroke="#A855F7"/>
+    <text x="1335" y="640" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">ML-KEM PQC</text>
+    
+    <rect x="1410" y="620" width="110" height="30" rx="5" fill="rgba(255,255,255,0.2)" stroke="#A855F7"/>
+    <text x="1465" y="640" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">Real PQC</text>
+    
+    <rect x="1540" y="620" width="110" height="30" rx="5" fill="rgba(255,255,255,0.2)" stroke="#A855F7"/>
+    <text x="1595" y="640" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">Hybrid Engine</text>
+    
+    <rect x="1670" y="620" width="110" height="30" rx="5" fill="rgba(255,255,255,0.2)" stroke="#A855F7"/>
+    <text x="1725" y="640" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">AES Variants</text>
+  </g>
+  
+  <!-- QUANTUM LAYER -->
+  <g>
+    <rect x="50" y="730" width="600" height="250" rx="15" fill="url(#quantumGrad)" stroke="#8B5CF6" stroke-width="3"/>
+    <text x="350" y="760" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#FFFFFF">
+      🔮 QUANTUM CRYPTOGRAPHY LAYER
+    </text>
+    
+    <!-- QKD Simulator -->
+    <rect x="80" y="780" width="160" height="80" rx="10" fill="rgba(255,255,255,0.2)" stroke="#8B5CF6"/>
+    <text x="160" y="805" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFFFFF">QKD Simulator</text>
+    <text x="160" y="825" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• BB84 Protocol</text>
+    <text x="160" y="837" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Qiskit Integration</text>
+    <text x="160" y="849" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Key Distribution</text>
+    
+    <!-- Key Manager -->
+    <rect x="260" y="780" width="160" height="80" rx="10" fill="rgba(255,255,255,0.2)" stroke="#8B5CF6"/>
+    <text x="340" y="805" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Key Manager</text>
+    <text x="340" y="825" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• ETSI GS QKD 014</text>
+    <text x="340" y="837" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Key Storage</text>
+    <text x="340" y="849" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Lifecycle Mgmt</text>
+    
+    <!-- Quantum Network -->
+    <rect x="440" y="780" width="160" height="80" rx="10" fill="rgba(255,255,255,0.2)" stroke="#8B5CF6"/>
+    <text x="520" y="805" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Quantum Network</text>
+    <text x="520" y="825" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Quantum Channel</text>
+    <text x="520" y="837" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Entanglement</text>
+    <text x="520" y="849" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Error Correction</text>
+    
+    <!-- Security Levels -->
+    <rect x="80" y="880" width="520" height="80" rx="10" fill="rgba(168,85,247,0.3)" stroke="#A855F7"/>
+    <text x="340" y="905" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">SECURITY LEVEL BRANCHING</text>
+    
+    <rect x="100" y="920" width="90" height="30" rx="5" fill="rgba(34,197,94,0.7)" stroke="#22C55E"/>
+    <text x="145" y="940" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">Level 1: QKD</text>
+    
+    <rect x="210" y="920" width="90" height="30" rx="5" fill="rgba(59,130,246,0.7)" stroke="#3B82F6"/>
+    <text x="255" y="940" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">Level 2: Hybrid</text>
+    
+    <rect x="320" y="920" width="90" height="30" rx="5" fill="rgba(139,92,246,0.7)" stroke="#8B5CF6"/>
+    <text x="365" y="940" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">Level 3: PQC</text>
+    
+    <rect x="430" y="920" width="90" height="30" rx="5" fill="rgba(239,68,68,0.7)" stroke="#EF4444"/>
+    <text x="475" y="940" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">Level 4: Classic</text>
+  </g>
+  
+  <!-- EXTERNAL SERVICES -->
+  <g>
+    <rect x="700" y="730" width="600" height="250" rx="15" fill="url(#externalGrad)" stroke="#EF4444" stroke-width="3"/>
+    <text x="1000" y="760" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#FFFFFF">
+      🌐 EXTERNAL SERVICES &amp; INTEGRATIONS
+    </text>
+    
+    <!-- Email Providers -->
+    <rect x="730" y="780" width="140" height="80" rx="10" fill="rgba(255,255,255,0.2)" stroke="#EF4444"/>
+    <text x="800" y="805" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Email Providers</text>
+    <text x="800" y="825" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FECACA">• Gmail SMTP/IMAP</text>
+    <text x="800" y="837" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FECACA">• Yahoo Mail</text>
+    <text x="800" y="849" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FECACA">• Multi-language</text>
+    
+    <!-- Firebase -->
+    <rect x="890" y="780" width="140" height="80" rx="10" fill="rgba(255,255,255,0.2)" stroke="#EF4444"/>
+    <text x="960" y="805" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Firebase</text>
+    <text x="960" y="825" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FECACA">• Real-time DB</text>
+    <text x="960" y="837" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FECACA">• Authentication</text>
+    <text x="960" y="849" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FECACA">• Key Storage</text>
+    
+    <!-- Standards -->
+    <rect x="1050" y="780" width="140" height="80" rx="10" fill="rgba(255,255,255,0.2)" stroke="#EF4444"/>
+    <text x="1120" y="805" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Standards</text>
+    <text x="1120" y="825" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FECACA">• ETSI GS QKD 014</text>
+    <text x="1120" y="837" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FECACA">• NIST FIPS 203</text>
+    <text x="1120" y="849" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FECACA">• RFC 7748</text>
+    
+    <!-- Security Protocols -->
+    <rect x="730" y="880" width="460" height="80" rx="10" fill="rgba(239,68,68,0.3)" stroke="#DC2626"/>
+    <text x="960" y="905" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">SECURITY PROTOCOLS</text>
+    
+    <rect x="750" y="920" width="80" height="30" rx="5" fill="rgba(255,255,255,0.2)" stroke="#DC2626"/>
+    <text x="790" y="940" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">mTLS</text>
+    
+    <rect x="850" y="920" width="80" height="30" rx="5" fill="rgba(255,255,255,0.2)" stroke="#DC2626"/>
+    <text x="890" y="940" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">JWT</text>
+    
+    <rect x="950" y="920" width="80" height="30" rx="5" fill="rgba(255,255,255,0.2)" stroke="#DC2626"/>
+    <text x="990" y="940" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">OAuth2</text>
+    
+    <rect x="1050" y="920" width="80" height="30" rx="5" fill="rgba(255,255,255,0.2)" stroke="#DC2626"/>
+    <text x="1090" y="940" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FFFFFF">App Pass</text>
+  </g>
+  
+  <!-- DATA FLOW LAYER -->
+  <g>
+    <rect x="1350" y="730" width="1000" height="250" rx="15" fill="url(#securityGrad)" stroke="#F59E0B" stroke-width="3"/>
+    <text x="1850" y="760" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#FFFFFF">
+      📊 DATA FLOW &amp; PROCESSING PIPELINE
+    </text>
+    
+    <!-- Input Flow -->
+    <rect x="1380" y="780" width="180" height="60" rx="10" fill="rgba(251,191,36,0.3)" stroke="#F59E0B"/>
+    <text x="1470" y="805" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFFFFF">INPUT PROCESSING</text>
+    <text x="1470" y="825" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FEF3C7">Form Validation → Security Selection → Key Generation</text>
+    
+    <!-- Encryption Flow -->
+    <rect x="1580" y="780" width="180" height="60" rx="10" fill="rgba(251,191,36,0.3)" stroke="#F59E0B"/>
+    <text x="1670" y="805" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFFFFF">ENCRYPTION FLOW</text>
+    <text x="1670" y="825" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FEF3C7">Level Select → Key Derive → Encrypt → MIME Package</text>
+    
+    <!-- Transmission Flow -->
+    <rect x="1780" y="780" width="180" height="60" rx="10" fill="rgba(251,191,36,0.3)" stroke="#F59E0B"/>
+    <text x="1870" y="805" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFFFFF">TRANSMISSION</text>
+    <text x="1870" y="825" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FEF3C7">SMTP Send → Gmail Server → Recipient IMAP</text>
+    
+    <!-- Reception Flow -->
+    <rect x="1980" y="780" width="180" height="60" rx="10" fill="rgba(251,191,36,0.3)" stroke="#F59E0B"/>
+    <text x="2070" y="805" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFFFFF">RECEPTION</text>
+    <text x="2070" y="825" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FEF3C7">IMAP Fetch → Decrypt → Parse → Display</text>
+    
+    <!-- Processing Pipeline -->
+    <rect x="1380" y="860" width="780" height="100" rx="10" fill="rgba(245,158,11,0.3)" stroke="#D97706"/>
+    <text x="1770" y="885" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">REAL-TIME PROCESSING PIPELINE</text>
+    
+    <rect x="1400" y="900" width="100" height="45" rx="5" fill="rgba(255,255,255,0.2)" stroke="#D97706"/>
+    <text x="1450" y="915" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#FFFFFF">User Input</text>
+    <text x="1450" y="930" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#FEF3C7">Form Data</text>
+    <text x="1450" y="940" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#FEF3C7">Validation</text>
+    
+    <rect x="1520" y="900" width="100" height="45" rx="5" fill="rgba(255,255,255,0.2)" stroke="#D97706"/>
+    <text x="1570" y="915" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#FFFFFF">Animation</text>
+    <text x="1570" y="930" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#FEF3C7">3D Visual</text>
+    <text x="1570" y="940" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#FEF3C7">Key Display</text>
+    
+    <rect x="1640" y="900" width="100" height="45" rx="5" fill="rgba(255,255,255,0.2)" stroke="#D97706"/>
+    <text x="1690" y="915" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#FFFFFF">Key Gen</text>
+    <text x="1690" y="930" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#FEF3C7">QKD+ECDH</text>
+    <text x="1690" y="940" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#FEF3C7">+ML-KEM</text>
+    
+    <rect x="1760" y="900" width="100" height="45" rx="5" fill="rgba(255,255,255,0.2)" stroke="#D97706"/>
+    <text x="1810" y="915" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#FFFFFF">Hybrid KDF</text>
+    <text x="1810" y="930" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#FEF3C7">HKDF-SHA256</text>
+    <text x="1810" y="940" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#FEF3C7">256-bit Key</text>
+    
+    <rect x="1880" y="900" width="100" height="45" rx="5" fill="rgba(255,255,255,0.2)" stroke="#D97706"/>
+    <text x="1930" y="915" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#FFFFFF">Encryption</text>
+    <text x="1930" y="930" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#FEF3C7">AES-256-GCM</text>
+    <text x="1930" y="940" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#FEF3C7">Authenticated</text>
+    
+    <rect x="2000" y="900" width="100" height="45" rx="5" fill="rgba(255,255,255,0.2)" stroke="#D97706"/>
+    <text x="2050" y="915" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#FFFFFF">MIME Pack</text>
+    <text x="2050" y="930" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#FEF3C7">Email Format</text>
+    <text x="2050" y="940" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#FEF3C7">Attachments</text>
+    
+    <rect x="2120" y="900" width="100" height="45" rx="5" fill="rgba(255,255,255,0.2)" stroke="#D97706"/>
+    <text x="2170" y="915" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#FFFFFF">SMTP Send</text>
+    <text x="2170" y="930" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#FEF3C7">Gmail Server</text>
+    <text x="2170" y="940" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#FEF3C7">Delivery</text>
+  </g>
+  
+  <!-- PERFORMANCE METRICS -->
+  <g>
+    <rect x="50" y="1020" width="600" height="150" rx="15" fill="rgba(34,197,94,0.8)" stroke="#22C55E" stroke-width="3"/>
+    <text x="350" y="1050" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#FFFFFF">
+      ⚡ PERFORMANCE &amp; METRICS
+    </text>
+    
+    <rect x="80" y="1070" width="120" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#22C55E"/>
+    <text x="140" y="1090" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Encryption Speed</text>
+    <text x="140" y="1105" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#DCFCE7">66,397 ops/sec</text>
+    <text x="140" y="1120" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#DCFCE7">Sub-second</text>
+    
+    <rect x="220" y="1070" width="120" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#22C55E"/>
+    <text x="280" y="1090" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Key Generation</text>
+    <text x="280" y="1105" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#DCFCE7">Real-time</text>
+    <text x="280" y="1120" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#DCFCE7">192-bit Security</text>
+    
+    <rect x="360" y="1070" width="120" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#22C55E"/>
+    <text x="420" y="1090" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Email Processing</text>
+    <text x="420" y="1105" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#DCFCE7">Multi-threaded</text>
+    <text x="420" y="1120" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#DCFCE7">Concurrent</text>
+    
+    <rect x="500" y="1070" width="120" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#22C55E"/>
+    <text x="560" y="1090" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Memory Usage</text>
+    <text x="560" y="1105" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#DCFCE7">Optimized</text>
+    <text x="560" y="1120" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#DCFCE7">Low footprint</text>
+  </g>
+  
+  <!-- DEPLOYMENT &amp; SCALING -->
+  <g>
+    <rect x="700" y="1020" width="650" height="150" rx="15" fill="rgba(139,92,246,0.8)" stroke="#8B5CF6" stroke-width="3"/>
+    <text x="1025" y="1050" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#FFFFFF">
+      🚀 DEPLOYMENT &amp; FUTURE SCALING
+    </text>
+    
+    <rect x="730" y="1070" width="120" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#8B5CF6"/>
+    <text x="790" y="1090" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Current Platform</text>
+    <text x="790" y="1105" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#EDE9FE">Windows 10/11</text>
+    <text x="790" y="1120" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#EDE9FE">Electron Desktop</text>
+    
+    <rect x="870" y="1070" width="120" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#8B5CF6"/>
+    <text x="930" y="1090" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Modularity</text>
+    <text x="930" y="1105" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#EDE9FE">Chat/Video Ready</text>
+    <text x="930" y="1120" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#EDE9FE">Suite Expansion</text>
+    
+    <rect x="1010" y="1070" width="120" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#8B5CF6"/>
+    <text x="1070" y="1090" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Cloud Deploy</text>
+    <text x="1070" y="1105" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#EDE9FE">Kubernetes</text>
+    <text x="1070" y="1120" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#EDE9FE">Auto-scaling</text>
+    
+    <rect x="1150" y="1070" width="120" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#8B5CF6"/>
+    <text x="1210" y="1090" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Enterprise</text>
+    <text x="1210" y="1105" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#EDE9FE">Byte-Bandits Centers</text>
+    <text x="1210" y="1120" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#EDE9FE">Mission Critical</text>
+  </g>
+  
+  <!-- INNOVATION HIGHLIGHT -->
+  <g>
+    <rect x="1400" y="1020" width="950" height="150" rx="15" fill="rgba(168,85,247,0.9)" stroke="#A855F7" stroke-width="4"/>
+    <text x="1875" y="1050" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#FFFFFF">
+      🎯 2025 NOVEL BREAKTHROUGH INNOVATION
+    </text>
+    
+    <rect x="1430" y="1070" width="280" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#A855F7"/>
+    <text x="1570" y="1090" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Triple-Layer Hybrid Cryptography</text>
+    <text x="1570" y="1110" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#F3E8FF">QKD + ECDH + Real-PQC → HKDF-SHA256 → 256-bit Key</text>
+    <text x="1570" y="1125" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E9D5FF">First implementation of quantum-post-quantum-classical</text>
+    
+    <rect x="1730" y="1070" width="200" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#A855F7"/>
+    <text x="1830" y="1090" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Standards Compliance</text>
+    <text x="1830" y="1110" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#F3E8FF">ETSI GS QKD 014 + NIST FIPS 203 + RFC 7748</text>
+    <text x="1830" y="1125" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E9D5FF">192-bit hybrid security level</text>
+    
+    <rect x="1950" y="1070" width="200" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="#A855F7"/>
+    <text x="2050" y="1090" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Research Publication</text>
+    <text x="2050" y="1110" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#F3E8FF">arXiv:2509.10551 (September 2025)</text>
+    <text x="2050" y="1125" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E9D5FF">Novel hybrid encryption framework</text>
+  </g>
+  
+  <!-- DATA FLOW CONNECTIONS -->
+  
+  <!-- User to Frontend -->
+  <line x1="200" y1="220" x2="200" y2="280" stroke="#A855F7" stroke-width="4" marker-end="url(#purpleArrow)"/>
+  <text x="210" y="250" font-family="Arial, sans-serif" font-size="11" fill="#A855F7" font-weight="bold">User Input</text>
+  
+  <!-- Frontend to Backend (Main API) -->
+  <line x1="850" y1="480" x2="950" y2="480" stroke="#3B82F6" stroke-width="4" marker-end="url(#blueArrow)"/>
+  <text x="900" y="470" font-family="Arial, sans-serif" font-size="11" fill="#3B82F6" font-weight="bold">HTTPS API</text>
+  <text x="900" y="495" font-family="Arial, sans-serif" font-size="10" fill="#60A5FA">Real-time Communication</text>
+  
+  <!-- Frontend Animation Branch -->
+  <path d="M 530 560 Q 530 600, 530 650" stroke="#8B5CF6" stroke-width="3" fill="none" marker-end="url(#purpleArrow)"/>
+  <text x="545" y="605" font-family="Arial, sans-serif" font-size="10" fill="#8B5CF6">Animation Trigger</text>
+  
+  <!-- Backend to Quantum Layer -->
+  <line x1="1350" y1="680" x2="350" y2="730" stroke="#10B981" stroke-width="3" marker-end="url(#greenArrow)"/>
+  <text x="850" y="700" font-family="Arial, sans-serif" font-size="11" fill="#10B981" font-weight="bold">Quantum Key Request</text>
+  
+  <!-- Backend to External Services -->
+  <line x1="1350" y1="680" x2="1000" y2="730" stroke="#EF4444" stroke-width="3" marker-end="url(#redArrow)"/>
+  <text x="1175" y="700" font-family="Arial, sans-serif" font-size="11" fill="#EF4444" font-weight="bold">External API Calls</text>
+  
+  <!-- Quantum to Data Flow -->
+  <path d="M 650 855 Q 700 855, 1350 855" stroke="#8B5CF6" stroke-width="3" fill="none" marker-end="url(#purpleArrow)"/>
+  <text x="1000" y="845" font-family="Arial, sans-serif" font-size="11" fill="#8B5CF6" font-weight="bold">Quantum Keys to Processing</text>
+  
+  <!-- Security Level Branches -->
+  <line x1="145" y1="950" x2="1470" y2="850" stroke="#22C55E" stroke-width="2" marker-end="url(#greenArrow)"/>
+  <text x="800" y="900" font-family="Arial, sans-serif" font-size="9" fill="#22C55E">Level 1: QKD Flow</text>
+  
+  <line x1="255" y1="950" x2="1570" y2="850" stroke="#3B82F6" stroke-width="2" marker-end="url(#blueArrow)"/>
+  <text x="900" y="890" font-family="Arial, sans-serif" font-size="9" fill="#3B82F6">Level 2: Hybrid Flow</text>
+  
+  <line x1="365" y1="950" x2="1670" y2="850" stroke="#8B5CF6" stroke-width="2" marker-end="url(#purpleArrow)"/>
+  <text x="1000" y="880" font-family="Arial, sans-serif" font-size="9" fill="#8B5CF6">Level 3: PQC Flow</text>
+  
+  <line x1="475" y1="950" x2="1770" y2="850" stroke="#EF4444" stroke-width="2" marker-end="url(#redArrow)"/>
+  <text x="1100" y="870" font-family="Arial, sans-serif" font-size="9" fill="#EF4444">Level 4: Classical Flow</text>
+  
+  <!-- Processing Pipeline Connections -->
+  <line x1="1500" y1="900" x2="1520" y2="900" stroke="#F59E0B" stroke-width="3" marker-end="url(#yellowArrow)"/>
+  <line x1="1620" y1="900" x2="1640" y2="900" stroke="#F59E0B" stroke-width="3" marker-end="url(#yellowArrow)"/>
+  <line x1="1740" y1="900" x2="1760" y2="900" stroke="#F59E0B" stroke-width="3" marker-end="url(#yellowArrow)"/>
+  <line x1="1860" y1="900" x2="1880" y2="900" stroke="#F59E0B" stroke-width="3" marker-end="url(#yellowArrow)"/>
+  <line x1="1980" y1="900" x2="2000" y2="900" stroke="#F59E0B" stroke-width="3" marker-end="url(#yellowArrow)"/>
+  <line x1="2100" y1="900" x2="2120" y2="900" stroke="#F59E0B" stroke-width="3" marker-end="url(#yellowArrow)"/>
+  
+  <!-- External Email Flow -->
+  <path d="M 800 860 Q 800 1050, 2170 950" stroke="#EF4444" stroke-width="2" fill="none" marker-end="url(#redArrow)"/>
+  <text x="1500" y="1000" font-family="Arial, sans-serif" font-size="10" fill="#EF4444">Gmail SMTP Delivery</text>
+  
+  <!-- Performance Feedback Loop -->
+  <path d="M 350 1020 Q 350 700, 1350 580" stroke="#22C55E" stroke-width="2" fill="none" marker-end="url(#greenArrow)"/>
+  <text x="850" y="800" font-family="Arial, sans-serif" font-size="10" fill="#22C55E">Performance Monitoring</text>
+  
+  <!-- Innovation Impact Lines -->
+  <line x1="1570" y1="1020" x2="1000" y2="980" stroke="#A855F7" stroke-width="3" stroke-dasharray="10,5"/>
+  <line x1="1830" y1="1020" x2="1350" y2="980" stroke="#A855F7" stroke-width="3" stroke-dasharray="10,5"/>
+  <line x1="2050" y1="1020" x2="1700" y2="980" stroke="#A855F7" stroke-width="3" stroke-dasharray="10,5"/>
+  
+  <!-- Complex Branching Patterns -->
+  <!-- Multi-path encryption -->
+  <g stroke="#8B5CF6" stroke-width="2" fill="none">
+    <path d="M 1430 620 Q 1400 700, 1450 780"/>
+    <path d="M 1550 620 Q 1520 700, 1570 780"/>
+    <path d="M 1670 620 Q 1640 700, 1690 780"/>
+    <path d="M 1465 620 Q 1500 700, 1870 780"/>
+  </g>
+  
+  <!-- Data convergence -->
+  <g stroke="#F59E0B" stroke-width="2" fill="none">
+    <path d="M 160 880 Q 200 1000, 1450 945"/>
+    <path d="M 340 880 Q 400 1000, 1570 945"/>
+    <path d="M 520 880 Q 600 1000, 1690 945"/>
+  </g>
+  
+  <!-- Footer Information -->
+  <text x="1200" y="1200" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#A855F7">
+    🚀 Byte-Bandits Global Cyber Hackathon 2025 | Department of Space | Problem Statement ID: 25179
+  </text>
+  <text x="1200" y="1225" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#8B5CF6">
+    Complete System Architecture with Data Flow, Branching Logic, and Real-time Processing Pipeline
+  </text>
+  <text x="1200" y="1250" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#7C3AED">
+    Built from scratch in ~28 hours | Cursor IDE | Team of 3-5 members | Revolutionary Quantum-Secure Email Client
+  </text>
+  
+  <!-- Legend -->
+  <g>
+    <rect x="50" y="1300" width="2300" height="80" rx="10" fill="rgba(75,85,99,0.5)" stroke="#6B7280"/>
+    <text x="1200" y="1325" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">
+      🔍 LEGEND &amp; DATA FLOW PATTERNS
+    </text>
+    
+    <g transform="translate(100,1340)">
+      <line x1="0" y1="0" x2="30" y2="0" stroke="#3B82F6" stroke-width="3" marker-end="url(#blueArrow)"/>
+      <text x="40" y="5" font-family="Arial, sans-serif" font-size="11" fill="#3B82F6">Frontend-Backend API</text>
+    </g>
+    
+    <g transform="translate(300,1340)">
+      <line x1="0" y1="0" x2="30" y2="0" stroke="#10B981" stroke-width="3" marker-end="url(#greenArrow)"/>
+      <text x="40" y="5" font-family="Arial, sans-serif" font-size="11" fill="#10B981">Quantum Key Flow</text>
+    </g>
+    
+    <g transform="translate(500,1340)">
+      <line x1="0" y1="0" x2="30" y2="0" stroke="#8B5CF6" stroke-width="3" marker-end="url(#purpleArrow)"/>
+      <text x="40" y="5" font-family="Arial, sans-serif" font-size="11" fill="#8B5CF6">Encryption Pipeline</text>
+    </g>
+    
+    <g transform="translate(700,1340)">
+      <line x1="0" y1="0" x2="30" y2="0" stroke="#F59E0B" stroke-width="3" marker-end="url(#yellowArrow)"/>
+      <text x="40" y="5" font-family="Arial, sans-serif" font-size="11" fill="#F59E0B">Data Processing</text>
+    </g>
+    
+    <g transform="translate(900,1340)">
+      <line x1="0" y1="0" x2="30" y2="0" stroke="#EF4444" stroke-width="3" marker-end="url(#redArrow)"/>
+      <text x="40" y="5" font-family="Arial, sans-serif" font-size="11" fill="#EF4444">External Services</text>
+    </g>
+    
+    <g transform="translate(1100,1340)">
+      <line x1="0" y1="0" x2="30" y2="0" stroke="#22C55E" stroke-width="3" marker-end="url(#greenArrow)"/>
+      <text x="40" y="5" font-family="Arial, sans-serif" font-size="11" fill="#22C55E">Performance Monitoring</text>
+    </g>
+    
+    <g transform="translate(1350,1340)">
+      <line x1="0" y1="0" x2="30" y2="0" stroke="#A855F7" stroke-width="3" stroke-dasharray="5,5"/>
+      <text x="40" y="5" font-family="Arial, sans-serif" font-size="11" fill="#A855F7">Innovation Impact</text>
+    </g>
+    
+    <g transform="translate(1550,1340)">
+      <path d="M 0 0 Q 15 -10, 30 0" stroke="#8B5CF6" stroke-width="2" fill="none"/>
+      <text x="40" y="5" font-family="Arial, sans-serif" font-size="11" fill="#8B5CF6">Branching Logic</text>
+    </g>
+    
+    <g transform="translate(1750,1340)">
+      <path d="M 0 0 Q 15 10, 30 0" stroke="#F59E0B" stroke-width="2" fill="none"/>
+      <text x="40" y="5" font-family="Arial, sans-serif" font-size="11" fill="#F59E0B">Data Convergence</text>
+    </g>
+    
+    <g transform="translate(1950,1340)">
+      <rect x="0" y="-5" width="15" height="10" fill="rgba(255,255,255,0.2)" stroke="#FFFFFF"/>
+      <text x="25" y="5" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF">System Components</text>
+    </g>
+  </g>
+</svg>

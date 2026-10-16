@@ -1,0 +1,24 @@
+# QuMail: Quantum Secure Email Client - Python 3.12 Dependencies
+# Core Framework
+flask>=2.3.0
+flask-cors>=4.0.0
+cryptography>=41.0.0
+pyOpenSSL>=23.2.0
+
+# Quantum & Post-Quantum Cryptography  
+qiskit>=0.44.0
+liboqs-python>=0.8.0
+
+# Testing & AI
+pytest>=7.4.0
+scikit-learn>=1.3.0
+
+# Database & Storage
+supabase>=2.3.0
+
+# Additional utilities
+requests>=2.31.0
+numpy>=1.24.0
+
+# Python 3.12 Compatible versions
+typing-extensions>=4.5.0

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuMail - Quantum Secure Email Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body, html {
+            margin: 0; padding: 0; height: 100%; overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b0f19;
+            color: #fff;
+        }
+        
+        body {
+            overflow-y: auto;
+        }
+
+        
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        
+        .wave-container {
+            position: absolute; width: 100%; height: 100%; overflow: hidden; z-index: -1;
+        }
+        .wave {
+            position: absolute; bottom: 0; left: -50%; width: 200%; height: 100%;
+            background: linear-gradient(to right, rgba(118, 75, 162, 0.4), rgba(102, 126, 234, 0.4), rgba(118, 75, 162, 0.4));
+            opacity: 0.6; animation: wave-animation 15s linear infinite;
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            transform-origin: 50% 50%;
+            filter: blur(40px);
+        }
+        .wave:nth-child(2) {
+            bottom: -5%; animation-duration: 20s; animation-direction: reverse;
+            background: linear-gradient(to right, rgba(45, 212, 191, 0.2), rgba(168, 85, 247, 0.3));
+        }
+        .wave:nth-child(3) {
+            bottom: -10%; animation-duration: 25s;
+            background: linear-gradient(to right, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.3));
+        }
+        @keyframes wave-animation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        
+        .glass-card {
+            background: rgba(15, 15, 25, 0.4);
+            backdrop-filter: blur(25px) saturate(150%);
+            -webkit-backdrop-filter: blur(25px) saturate(150%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+        }
+        
+        .input-field {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .input-field:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(167, 139, 250, 0.5);
+            outline: none;
+            box-shadow: 0 0 15px rgba(167, 139, 250, 0.3);
+        }
+
+        
+        .lock-container {
+            display: none; position: fixed; inset: 0; z-index: 50;
+            background: rgba(11, 15, 25, 0.9);
+            backdrop-filter: blur(20px);
+            flex-direction: column; align-items: center; justify-content: center;
+        }
+        .lock-icon {
+            font-size: 6rem;
+            animation: pulse-lock 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .lock-text {
+            margin-top: 1.5rem; font-size: 1.4rem; font-weight: 600;
+            background: linear-gradient(to right, #a78bfa, #2dd4bf);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: text-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse-lock {
+            0%, 100% { transform: scale(1); opacity: 1; filter: drop-shadow(0 0 15px rgba(167, 139, 250, 0.6)); }
+            50% { transform: scale(1.1); opacity: 0.8; filter: drop-shadow(0 0 30px rgba(167, 139, 250, 0.9)); }
+        }
+        @keyframes text-glow {
+            from { text-shadow: 0 0 10px rgba(167, 139, 250, 0.5); }
+            to { text-shadow: 0 0 20px rgba(45, 212, 191, 0.8); }
+        }
+        
+        .unlock-animation {
+            animation: unlock-spin 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+        @keyframes unlock-spin {
+            0% { transform: scale(1) rotate(0deg); }
+            40% { transform: scale(1.2) rotate(15deg); opacity: 1; }
+            100% { transform: scale(4) rotate(360deg); opacity: 0; filter: blur(10px); }
+        }
+    </style>
+</head>
+<body class="flex p-4 min-h-screen">
+    
+    <div class="wave-container">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    
+    <div class="glass-card rounded-3xl p-8 w-full max-w-md relative z-10 m-auto" id="loginCard">
+        
+        <div class="text-center mb-6">
+            <div class="text-4xl mb-2" style="text-shadow: 0 0 20px rgba(255,255,255,0.2);">🔐</div>
+            <h1 class="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-teal-400 mb-1">QuMail</h1>
+            <p class="text-white/80 text-sm font-medium tracking-wide">Quantum-Secure Email Client</p>
+            <p class="text-white/40 text-xs mt-1 uppercase tracking-widest">Byte_Bandits 2026</p>
+        </div>
+
+        
+        <form id="loginForm" class="space-y-4">
+            
+            <div>
+                <label class="block text-white/90 text-sm font-medium mb-2 pl-1">
+                    📧 Gmail Address
+                </label>
+                <input type="email" id="gmailEmail" placeholder="your.email@gmail.com" required
+                    class="input-field w-full px-5 py-3.5 rounded-xl text-white placeholder-white/40 shadow-inner" />
+            </div>
+
+            
+            <div>
+                <label class="block text-white/90 text-sm font-medium mb-2 pl-1">
+                    🔑 Gmail App Password
+                </label>
+                <input type="password" id="appPassword" placeholder="xxxx xxxx xxxx xxxx" required
+                    class="input-field w-full px-5 py-3.5 rounded-xl text-white placeholder-white/40 font-mono tracking-widest shadow-inner" />
+            </div>
+
+            
+            <div class="bg-white/5 rounded-xl p-4 border border-white/5">
+                <div class="flex items-center space-x-2 mb-2">
+                    <span class="text-teal-400">📱</span>
+                    <strong class="text-white/90 text-sm">Need an App Password?</strong>
+                </div>
+                <ol class="text-white/60 text-xs space-y-1 ml-6 list-decimal">
+                    <li>Go to <strong>myaccount.google.com</strong></li>
+                    <li>Security → 2-Step Verification</li>
+                    <li>App passwords → Generate new</li>
+                    <li>Select "Mail" and copy the 16-character code</li>
+                </ol>
+                <button type="button" id="helpButton" class="text-teal-300 text-xs mt-3 hover:text-teal-200 transition-colors flex items-center space-x-1">
+                    <span>📋 Open Setup Guide</span>
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </button>
+            </div>
+
+            
+            <button type="submit" id="loginButton"
+                class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(147,51,234,0.4)] hover:shadow-[0_0_30px_rgba(147,51,234,0.6)] transform hover:-translate-y-1">
+                Launch QuMail
+            </button>
+
+            
+            <div id="statusMessage" class="hidden text-center p-3 rounded-xl text-sm font-medium transition-all duration-300">
+                <span id="statusText"></span>
+            </div>
+        </form>
+
+        
+        <div class="mt-4 pt-4 border-t border-white/10 text-center">
+            <div class="flex justify-center items-center space-x-6 text-white/50 text-xs">
+                <div class="flex flex-col items-center hover:text-white/90 transition-colors"><span class="text-lg mb-1">🔐</span><span>Quantum-Safe</span></div>
+                <div class="flex flex-col items-center hover:text-white/90 transition-colors"><span class="text-lg mb-1">⚡</span><span>Real QKD</span></div>
+                <div class="flex flex-col items-center hover:text-white/90 transition-colors"><span class="text-lg mb-1">🎯</span><span>Hybrid Sec</span></div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="digitalLock" class="lock-container">
+        <div id="lockIcon" class="lock-icon">🔒</div>
+        <div id="lockText" class="lock-text">Establishing Quantum Link...</div>
+    </div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+
+
+        const loginForm = document.getElementById('loginForm');
+        const gmailEmail = document.getElementById('gmailEmail');
+        const appPassword = document.getElementById('appPassword');
+        const loginButton = document.getElementById('loginButton');
+        const statusMessage = document.getElementById('statusMessage');
+        const statusText = document.getElementById('statusText');
+        const helpButton = document.getElementById('helpButton');
+        
+
+        const digitalLock = document.getElementById('digitalLock');
+        const lockIcon = document.getElementById('lockIcon');
+        const lockText = document.getElementById('lockText');
+        const loginCard = document.getElementById('loginCard');
+
+
+        helpButton.addEventListener('click', () => {
+            ipcRenderer.send('open-external-url', 'https://myaccount.google.com/security');
+        });
+
+
+        appPassword.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\s/g, '');
+            if (value.length > 16) value = value.substring(0, 16);
+            value = value.replace(/(.{4})/g, '$1 ').trim();
+            e.target.value = value;
+        });
+
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = gmailEmail.value.trim();
+            const password = appPassword.value.trim();
+            const cleanPassword = password.replace(/\s/g, '');
+
+            if (!email || !password || !email.endsWith('@gmail.com') || cleanPassword.length !== 16) {
+                showStatus('Invalid Gmail address or App Password.', 'error');
+                return;
+            }
+
+
+            loginCard.style.transform = 'scale(0.95)';
+            loginCard.style.opacity = '0';
+            setTimeout(() => {
+                loginCard.style.display = 'none';
+                digitalLock.style.display = 'flex';
+            }, 300);
+
+            try {
+
+                const response = await fetch('http://localhost:5000/api/email/status', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email, password: cleanPassword })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+
+                    lockIcon.textContent = '🔓';
+                    lockText.textContent = 'Link Established!';
+                    lockIcon.classList.remove('lock-icon');
+                    lockIcon.classList.add('unlock-animation');
+
+                    localStorage.setItem('qumail_gmail_email', email);
+                    localStorage.setItem('qumail_gmail_password', cleanPassword);
+                    localStorage.setItem('qumail_logged_in', 'true');
+
+                    ipcRenderer.send('login-success', { email, password: cleanPassword });
+
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 800);
+                } else {
+
+                    resetLock(`❌ Login Failed: ${result.error || 'Invalid credentials'}`);
+                }
+            } catch (error) {
+                resetLock(`❌ Connection error: Backend offline?`);
+            }
+        });
+
+        function resetLock(errorMsg) {
+            digitalLock.style.display = 'none';
+            loginCard.style.display = 'block';
+            setTimeout(() => {
+                loginCard.style.transform = 'scale(1)';
+                loginCard.style.opacity = '1';
+                showStatus(errorMsg, 'error');
+            }, 50);
+        }
+
+        function showStatus(message, type) {
+            statusText.textContent = message;
+            statusMessage.className = `text-center p-3 rounded-xl mt-4 ${type === 'error' ? 'bg-red-500/20 text-red-300 border border-red-500/30' : 'bg-blue-500/20 text-blue-300 border border-blue-500/30'}`;
+            statusMessage.classList.remove('hidden');
+        }
+
+        gmailEmail.focus();
+    </script>
+</body>
+</html>

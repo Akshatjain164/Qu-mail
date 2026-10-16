@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F0F23;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A1A3A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="quantumGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#A855F7;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="backendGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#34D399;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="frontendGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#60A5FA;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="securityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#FBBF24;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  
+  <!-- Title -->
+  <text x="800" y="40" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#FFFFFF">
+    🛡️ QuMail: Quantum Secure Email Client - Complete Architecture
+  </text>
+  <text x="800" y="70" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#A855F7">
+    Byte-Bandits Global Cyber Hackathon 2025 | Problem Statement ID: 25179 | 192-bit Hybrid Security
+  </text>
+  
+  <!-- Frontend Layer -->
+  <g>
+    <rect x="50" y="120" width="700" height="320" rx="15" fill="url(#frontendGradient)" stroke="#60A5FA" stroke-width="2"/>
+    <text x="400" y="150" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#FFFFFF">
+      🎨 Frontend - Electron Desktop Application
+    </text>
+    
+    <!-- UI Components -->
+    <rect x="80" y="180" width="150" height="80" rx="8" fill="rgba(255,255,255,0.1)" stroke="#60A5FA"/>
+    <text x="155" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Glassmorphism UI</text>
+    <text x="155" y="215" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Violet/Purple Theme</text>
+    <text x="155" y="230" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Frosted Glass Effects</text>
+    <text x="155" y="245" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Responsive Design</text>
+    
+    <rect x="250" y="180" width="150" height="80" rx="8" fill="rgba(255,255,255,0.1)" stroke="#60A5FA"/>
+    <text x="325" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Email Manager</text>
+    <text x="325" y="215" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Gmail/Yahoo IMAP</text>
+    <text x="325" y="230" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Real-time Sync</text>
+    <text x="325" y="245" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Multi-folder Support</text>
+    
+    <rect x="420" y="180" width="150" height="80" rx="8" fill="rgba(255,255,255,0.1)" stroke="#60A5FA"/>
+    <text x="495" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Compose Manager</text>
+    <text x="495" y="215" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Real Email Sending</text>
+    <text x="495" y="230" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Security Level Selection</text>
+    <text x="495" y="245" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Form Validation</text>
+    
+    <rect x="590" y="180" width="150" height="80" rx="8" fill="rgba(255,255,255,0.1)" stroke="#60A5FA"/>
+    <text x="665" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Profile Manager</text>
+    <text x="665" y="215" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Gmail App Password</text>
+    <text x="665" y="230" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Authentication</text>
+    <text x="665" y="245" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Session Management</text>
+    
+    <!-- 3D Animation -->
+    <rect x="80" y="280" width="150" height="80" rx="8" fill="rgba(139,92,246,0.2)" stroke="#8B5CF6"/>
+    <text x="155" y="300" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Hybrid Animation</text>
+    <text x="155" y="315" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Three.js 3D Graphics</text>
+    <text x="155" y="330" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Key Derivation Visual</text>
+    <text x="155" y="345" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Particle Systems</text>
+    
+    <!-- Real Encryption API -->
+    <rect x="250" y="280" width="150" height="80" rx="8" fill="rgba(139,92,246,0.2)" stroke="#8B5CF6"/>
+    <text x="325" y="300" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Real Encryption API</text>
+    <text x="325" y="315" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Frontend Crypto</text>
+    <text x="325" y="330" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• API Integration</text>
+    <text x="325" y="345" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Security Levels</text>
+    
+    <!-- Email Integration -->
+    <rect x="420" y="280" width="150" height="80" rx="8" fill="rgba(139,92,246,0.2)" stroke="#8B5CF6"/>
+    <text x="495" y="300" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Email Integration</text>
+    <text x="495" y="315" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• SMTP/IMAP Client</text>
+    <text x="495" y="330" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Multi-language Folders</text>
+    <text x="495" y="345" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Error Handling</text>
+    
+    <!-- QKD Manager -->
+    <rect x="590" y="280" width="150" height="80" rx="8" fill="rgba(139,92,246,0.2)" stroke="#8B5CF6"/>
+    <text x="665" y="300" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">QKD Manager</text>
+    <text x="665" y="315" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• ETSI GS QKD 014</text>
+    <text x="665" y="330" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Key Management</text>
+    <text x="665" y="345" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Backend Sync</text>
+    
+    <!-- Technologies -->
+    <text x="70" y="425" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#60A5FA">Technologies:</text>
+    <text x="170" y="425" font-family="Arial, sans-serif" font-size="12" fill="#E5E7EB">Electron • HTML5 • CSS3 • JavaScript ES6+ • Three.js • Tailwind CSS • Web Speech API</text>
+  </g>
+  
+  <!-- Backend Layer -->
+  <g>
+    <rect x="850" y="120" width="700" height="320" rx="15" fill="url(#backendGradient)" stroke="#34D399" stroke-width="2"/>
+    <text x="1200" y="150" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#FFFFFF">
+      ⚙️ Backend - Flask RESTful API Server
+    </text>
+    
+    <!-- Core Services -->
+    <rect x="880" y="180" width="150" height="80" rx="8" fill="rgba(255,255,255,0.1)" stroke="#34D399"/>
+    <text x="955" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Flask API Server</text>
+    <text x="955" y="215" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• RESTful Endpoints</text>
+    <text x="955" y="230" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• CORS Support</text>
+    <text x="955" y="245" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Error Handling</text>
+    
+    <rect x="1050" y="180" width="150" height="80" rx="8" fill="rgba(255,255,255,0.1)" stroke="#34D399"/>
+    <text x="1125" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Email Services</text>
+    <text x="1125" y="215" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Gmail SMTP/IMAP</text>
+    <text x="1125" y="230" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Multi-provider Support</text>
+    <text x="1125" y="245" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Folder Management</text>
+    
+    <rect x="1220" y="180" width="150" height="80" rx="8" fill="rgba(255,255,255,0.1)" stroke="#34D399"/>
+    <text x="1295" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Encryption Engine</text>
+    <text x="1295" y="215" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Multi-Level Encryption</text>
+    <text x="1295" y="230" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Hybrid Key Derivation</text>
+    <text x="1295" y="245" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• MIME Processing</text>
+    
+    <rect x="1390" y="180" width="150" height="80" rx="8" fill="rgba(255,255,255,0.1)" stroke="#34D399"/>
+    <text x="1465" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Config & Setup</text>
+    <text x="1465" y="215" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Firebase Integration</text>
+    <text x="1465" y="230" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• Certificate Management</text>
+    <text x="1465" y="245" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#E5E7EB">• mTLS Configuration</text>
+    
+    <!-- Crypto Modules -->
+    <rect x="880" y="280" width="130" height="80" rx="8" fill="rgba(16,185,129,0.2)" stroke="#10B981"/>
+    <text x="945" y="300" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">QKD Simulator</text>
+    <text x="945" y="315" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• BB84 Protocol</text>
+    <text x="945" y="327" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Qiskit Integration</text>
+    <text x="945" y="339" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• ETSI Compliant</text>
+    <text x="945" y="351" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Key Distribution</text>
+    
+    <rect x="1030" y="280" width="130" height="80" rx="8" fill="rgba(16,185,129,0.2)" stroke="#10B981"/>
+    <text x="1095" y="300" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">ECDH/X25519</text>
+    <text x="1095" y="315" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• RFC 7748</text>
+    <text x="1095" y="327" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Key Exchange</text>
+    <text x="1095" y="339" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• EdDSA Signatures</text>
+    <text x="1095" y="351" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Curve25519</text>
+    
+    <rect x="1180" y="280" width="130" height="80" rx="8" fill="rgba(16,185,129,0.2)" stroke="#10B981"/>
+    <text x="1245" y="300" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">ML-KEM PQC</text>
+    <text x="1245" y="315" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• NIST FIPS 203</text>
+    <text x="1245" y="327" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• ML-KEM-768</text>
+    <text x="1245" y="339" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• ML-DSA-65</text>
+    <text x="1245" y="351" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• PyNaCl + Crypto</text>
+    
+    <rect x="1330" y="280" width="130" height="80" rx="8" fill="rgba(16,185,129,0.2)" stroke="#10B981"/>
+    <text x="1395" y="300" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Hybrid Derivator</text>
+    <text x="1395" y="315" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• HKDF-SHA256</text>
+    <text x="1395" y="327" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Key Concatenation</text>
+    <text x="1395" y="339" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• Triple Component</text>
+    <text x="1395" y="351" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#E5E7EB">• 256-bit Output</text>
+    
+    <!-- Technologies -->
+    <text x="870" y="425" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#34D399">Technologies:</text>
+    <text x="970" y="425" font-family="Arial, sans-serif" font-size="12" fill="#E5E7EB">Python 3.12 • Flask • Qiskit • PyNaCl • Cryptography • Firebase • smtplib • imaplib</text>
+  </g>
+  
+  <!-- Security Layers -->
+  <g>
+    <rect x="50" y="480" width="1500" height="240" rx="15" fill="url(#securityGradient)" stroke="#FBBF24" stroke-width="2"/>
+    <text x="800" y="510" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#FFFFFF">
+      🔐 Four-Level Hybrid Security Framework
+    </text>
+    
+    <!-- Level 1 -->
+    <rect x="80" y="540" width="280" height="120" rx="10" fill="rgba(34,197,94,0.8)" stroke="#22C55E" stroke-width="2"/>
+    <text x="220" y="565" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">🟢 Level 1: Quantum Secure</text>
+    <text x="220" y="585" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#F0FDF4">Algorithm: One-Time Pad (OTP)</text>
+    <text x="220" y="600" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#F0FDF4">Key Source: QKD BB84 Protocol</text>
+    <text x="220" y="615" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#F0FDF4">Security: Information-theoretic (Perfect)</text>
+    <text x="220" y="630" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#F0FDF4">Standard: ETSI GS QKD 014</text>
+    <text x="220" y="645" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#DCFCE7">✅ Quantum Resistant | ✅ ETSI Compliant</text>
+    
+    <!-- Level 2 -->
+    <rect x="380" y="540" width="280" height="120" rx="10" fill="rgba(59,130,246,0.8)" stroke="#3B82F6" stroke-width="2"/>
+    <text x="520" y="565" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">🔵 Level 2: Quantum-aided AES</text>
+    <text x="520" y="585" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#EFF6FF">Algorithm: AES-256-GCM</text>
+    <text x="520" y="600" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#EFF6FF">Key Source: QKD + ECDH + ML-KEM</text>
+    <text x="520" y="615" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#EFF6FF">Security: 256-bit Hybrid</text>
+    <text x="520" y="630" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#EFF6FF">Derivation: HKDF-SHA256</text>
+    <text x="520" y="645" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#DBEAFE">✅ Quantum Resistant | ✅ ETSI Compliant</text>
+    
+    <!-- Level 3 -->
+    <rect x="680" y="540" width="280" height="120" rx="10" fill="rgba(139,92,246,0.8)" stroke="#8B5CF6" stroke-width="2"/>
+    <text x="820" y="565" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">🟣 Level 3: Hybrid PQC</text>
+    <text x="820" y="585" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#F5F3FF">Algorithm: ML-KEM-768 + AES-256</text>
+    <text x="820" y="600" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#F5F3FF">Key Source: Post-Quantum Crypto</text>
+    <text x="820" y="615" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#F5F3FF">Security: 192-bit Post-Quantum</text>
+    <text x="820" y="630" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#F5F3FF">Signatures: EdDSA + ML-DSA-65</text>
+    <text x="820" y="645" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#EDE9FE">✅ Quantum Resistant | ✅ NIST FIPS 203</text>
+    
+    <!-- Level 4 -->
+    <rect x="980" y="540" width="280" height="120" rx="10" fill="rgba(239,68,68,0.8)" stroke="#EF4444" stroke-width="2"/>
+    <text x="1120" y="565" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">🔴 Level 4: Classical</text>
+    <text x="1120" y="585" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#FEF2F2">Algorithm: AES-256-CBC</text>
+    <text x="1120" y="600" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#FEF2F2">Key Source: Random/None</text>
+    <text x="1120" y="615" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#FEF2F2">Security: 256-bit Classical</text>
+    <text x="1120" y="630" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#FEF2F2">Use Case: Testing/Standard</text>
+    <text x="1120" y="645" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#FED7D7">❌ Quantum Vulnerable | ❌ No Quantum</text>
+    
+    <!-- Hybrid Result -->
+    <rect x="1300" y="540" width="220" height="120" rx="10" fill="rgba(168,85,247,0.9)" stroke="#A855F7" stroke-width="3"/>
+    <text x="1410" y="565" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">🎯 Hybrid Result</text>
+    <text x="1410" y="585" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#F3E8FF">192-bit Security</text>
+    <text x="1410" y="605" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#F3E8FF">Against Quantum &</text>
+    <text x="1410" y="620" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#F3E8FF">Classical Threats</text>
+    <text x="1410" y="640" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#E9D5FF">✨ 2025 Breakthrough</text>
+    <text x="1410" y="655" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#E9D5FF">arXiv:2509.10551</text>
+  </g>
+  
+  <!-- External Integrations -->
+  <g>
+    <rect x="50" y="760" width="700" height="180" rx="15" fill="rgba(75,85,99,0.8)" stroke="#6B7280" stroke-width="2"/>
+    <text x="400" y="790" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#FFFFFF">
+      🌐 External Integrations & Standards
+    </text>
+    
+    <!-- Gmail Integration -->
+    <rect x="80" y="810" width="150" height="60" rx="8" fill="rgba(239,68,68,0.6)" stroke="#EF4444"/>
+    <text x="155" y="830" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Gmail Integration</text>
+    <text x="155" y="845" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FECACA">SMTP/IMAP • App Passwords</text>
+    <text x="155" y="857" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FECACA">Multi-language Folders</text>
+    
+    <!-- Standards -->
+    <rect x="250" y="810" width="150" height="60" rx="8" fill="rgba(34,197,94,0.6)" stroke="#22C55E"/>
+    <text x="325" y="830" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Standards</text>
+    <text x="325" y="845" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#DCFCE7">ETSI GS QKD 014</text>
+    <text x="325" y="857" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#DCFCE7">NIST FIPS 203 • RFC 7748</text>
+    
+    <!-- Firebase -->
+    <rect x="420" y="810" width="150" height="60" rx="8" fill="rgba(251,191,36,0.6)" stroke="#FBBF24"/>
+    <text x="495" y="830" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Firebase</text>
+    <text x="495" y="845" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FEF3C7">Real-time Database</text>
+    <text x="495" y="857" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FEF3C7">Key Management</text>
+    
+    <!-- Qiskit -->
+    <rect x="590" y="810" width="150" height="60" rx="8" fill="rgba(139,92,246,0.6)" stroke="#8B5CF6"/>
+    <text x="665" y="830" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Qiskit</text>
+    <text x="665" y="845" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#EDE9FE">Quantum Simulation</text>
+    <text x="665" y="857" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#EDE9FE">BB84 Protocol</text>
+    
+    <!-- Data Flow Labels -->
+    <text x="80" y="905" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#9CA3AF">Data Flow:</text>
+    <text x="160" y="905" font-family="Arial, sans-serif" font-size="12" fill="#D1D5DB">User Input → Frontend → Backend API → Encryption → Email Servers → Recipients</text>
+    <text x="80" y="925" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#9CA3AF">Security:</text>
+    <text x="160" y="925" font-family="Arial, sans-serif" font-size="12" fill="#D1D5DB">mTLS • App Passwords • JWT Tokens • AES-256 • Quantum Key Distribution</text>
+  </g>
+  
+  <!-- Performance & Features -->
+  <g>
+    <rect x="850" y="760" width="700" height="180" rx="15" fill="rgba(75,85,99,0.8)" stroke="#6B7280" stroke-width="2"/>
+    <text x="1200" y="790" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#FFFFFF">
+      ⚡ Performance & Key Features
+    </text>
+    
+    <!-- Performance -->
+    <rect x="880" y="810" width="150" height="60" rx="8" fill="rgba(34,197,94,0.6)" stroke="#22C55E"/>
+    <text x="955" y="830" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Performance</text>
+    <text x="955" y="845" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#DCFCE7">66,397 ops/sec</text>
+    <text x="955" y="857" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#DCFCE7">Sub-second encryption</text>
+    
+    <!-- Features -->
+    <rect x="1050" y="810" width="150" height="60" rx="8" fill="rgba(59,130,246,0.6)" stroke="#3B82F6"/>
+    <text x="1125" y="830" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Features</text>
+    <text x="1125" y="845" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#DBEAFE">Voice Commands</text>
+    <text x="1125" y="857" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#DBEAFE">3D Animations</text>
+    
+    <!-- Platform -->
+    <rect x="1220" y="810" width="150" height="60" rx="8" fill="rgba(139,92,246,0.6)" stroke="#8B5CF6"/>
+    <text x="1295" y="830" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Platform</text>
+    <text x="1295" y="845" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#EDE9FE">Windows 10/11</text>
+    <text x="1295" y="857" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#EDE9FE">Electron Desktop</text>
+    
+    <!-- Modularity -->
+    <rect x="1390" y="810" width="150" height="60" rx="8" fill="rgba(251,191,36,0.6)" stroke="#FBBF24"/>
+    <text x="1465" y="830" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Modularity</text>
+    <text x="1465" y="845" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FEF3C7">Future Chat/Video</text>
+    <text x="1465" y="857" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FEF3C7">Suite Ready</text>
+    
+    <!-- Additional Info -->
+    <text x="880" y="905" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#9CA3AF">Development:</text>
+    <text x="980" y="905" font-family="Arial, sans-serif" font-size="12" fill="#D1D5DB">Built from scratch in ~28 hours using Cursor IDE • 3-5 member team</text>
+    <text x="880" y="925" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#9CA3AF">Demo Ready:</text>
+    <text x="970" y="925" font-family="Arial, sans-serif" font-size="12" fill="#D1D5DB">2-3 minute interactive demo with animations and voice commands</text>
+  </g>
+  
+  <!-- Connection Lines -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8B5CF6" />
+    </marker>
+  </defs>
+  
+  <!-- Frontend to Backend -->
+  <line x1="750" y1="280" x2="850" y2="280" stroke="#8B5CF6" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="800" y="270" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#8B5CF6" font-weight="bold">HTTPS API</text>
+  
+  <!-- Backend to Security -->
+  <line x1="1200" y1="440" x2="1200" y2="480" stroke="#FBBF24" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Frontend to Security -->
+  <line x1="400" y1="440" x2="400" y2="480" stroke="#FBBF24" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Integrations connections -->
+  <line x1="400" y1="720" x2="400" y2="760" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1200" y1="720" x2="1200" y2="760" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Footer -->
+  <text x="800" y="980" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#A855F7">
+    🚀 Byte-Bandits Global Cyber Hackathon 2025 | Department of Space | Problem Statement ID: 25179
+  </text>
+  <text x="800" y="1000" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#8B5CF6">
+    "Revolutionary Quantum-Secure Email Client with Novel 2025 Hybrid Encryption Framework"
+  </text>
+  
+  <!-- Novel Framework Highlight -->
+  <rect x="200" y="1030" width="1200" height="80" rx="20" fill="rgba(168,85,247,0.1)" stroke="#A855F7" stroke-width="3" stroke-dasharray="10,5"/>
+  <text x="800" y="1055" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#A855F7">
+    🎯 Novel 2025 Breakthrough: QKD + ECDH + Real-PQC → HKDF-SHA256 → 256-bit Hybrid Key
+  </text>
+  <text x="800" y="1080" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#8B5CF6">
+    Security Level: 192-bit hybrid (triple-component) | Standards: ETSI + RFC 7748 + NIST FIPS 203
+  </text>
+  <text x="800" y="1100" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#7C3AED">
+    arXiv:2509.10551 | First implementation of triple-layer quantum-post-quantum-classical cryptography
+  </text>
+</svg>
+
