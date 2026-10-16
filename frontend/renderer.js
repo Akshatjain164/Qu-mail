@@ -3,7 +3,7 @@
 
 class QuantumKeyManager {
     constructor() {
-        this.apiBaseUrl = 'http://localhost:5000/api/qkd';
+        this.apiBaseUrl = (window.QUMAIL_CONFIG ? window.QUMAIL_CONFIG.API_QKD : 'https://qu-mail-a4jk.onrender.com/api/qkd');
         this.keyCache = new Map();
         this.isConnected = false;
         this.initializeEventListeners();

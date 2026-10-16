@@ -4,7 +4,7 @@
 class QuMailLiveTester {
     constructor() {
         this.testResults = [];
-        this.apiBaseUrl = 'http://localhost:5000';
+        this.apiBaseUrl = (window.QUMAIL_CONFIG ? window.QUMAIL_CONFIG.API_BASE_URL : 'https://qu-mail-a4jk.onrender.com');
     }
 
     async runAllTests() {

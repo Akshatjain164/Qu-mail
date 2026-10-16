@@ -3,7 +3,7 @@
 
 class QuMailRealEncryption {
     constructor() {
-        this.apiBaseUrl = 'http://localhost:5000/api';
+        this.apiBaseUrl = (window.QUMAIL_CONFIG ? window.QUMAIL_CONFIG.API_API : 'https://qu-mail-a4jk.onrender.com/api');
         this.isConnected = false;
         this.encryptionLevels = null;
         this.initializeConnection();

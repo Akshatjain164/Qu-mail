@@ -86,18 +86,8 @@ except Exception as e:
 
 app = Flask(__name__)
 
-cors_origins = [
-    "http://localhost:*",
-    "https://mail.google.com",
-    "chrome-extension://*",
-]
-
-if os.environ.get('ENVIRONMENT') == 'production':
-    cors_origins.extend([
-        "https://qumail-backend.onrender.com",
-    ])
-
-CORS(app, origins=cors_origins, supports_credentials=True)
+# Enable CORS for all incoming client origins (Vercel, Netlify, localhost, Electron, Render)
+CORS(app, origins=r".*", supports_credentials=True)
 
 key_lock = Lock()
 
